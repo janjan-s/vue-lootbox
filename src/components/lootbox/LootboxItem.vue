@@ -25,6 +25,7 @@ export default defineComponent({
     border-radius: var(--border-containers);
     border: var(--light-grey) 1px solid;
     flex: 1 1 25%;
+    max-width: 30%;
 }
 
 .lootbox-item img {
@@ -38,33 +39,16 @@ export default defineComponent({
     margin: 0;
 }
 
-/* li.lootbox-item {
-    flex: 1 1 21%;
-    border-radius: var(--border-containers);
-    border: var(--light-grey) 1px solid;
-    text-align: center;
-    max-width: 21%;
-    display: flex;
-    flex-direction: column;
-}
+@media screen and (min-width: 992px) {
+    .lootbox-item {
+        flex: 1 1 20%;
+        max-width: 20%;
+    }
 
-li h3 {
-    flex: 1 1 25%;
+    .lootbox-item img {
+        width: 100%;
+        height: 100px;
 }
-
-li span {
-    flex: 1 1 25%;
 }
-
-li img {
-    margin-bottom: 0;
-    padding: 0;
-    flex: 1 1 50%;
-}
-
-span {
-    display: block;
-    border-top: var(--light-grey) 1px solid;
-} */
 
 </style>

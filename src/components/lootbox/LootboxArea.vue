@@ -29,4 +29,11 @@ export default defineComponent({
   margin: var(--mobile-gutters);
   border-radius: var(--border-containers);
 }
+
+@media screen and (min-width: 1200px) {
+    .lootbox-container {
+        width: 70%;
+    }
+}
+
 </style>

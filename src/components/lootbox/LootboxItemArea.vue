@@ -7,10 +7,10 @@
             <LootboxItem />
             <LootboxItem />
             <LootboxItem />
-
-
         </ul>
-
+            <Arrows />
+            <AppButton />
+            <AppButton />
 
     </div>
 </template>
@@ -18,6 +18,8 @@
 
 <script setup lang="ts">
 import LootboxItem from './LootboxItem.vue'
+import Arrows from '../blocks/Arrows.vue'
+import AppButton from '../blocks/AppButton.vue'
 
 </script>
 
@@ -43,6 +45,7 @@ ul {
 
 .content {
     padding-top: 0;
+    position: relative;
 }
 
 </style>

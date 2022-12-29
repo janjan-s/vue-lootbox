@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import LootboxArea from './components/LootboxArea.vue';
+import LootboxArea from './components/lootbox/LootboxArea.vue';
 import Navigation from './components/Navigation.vue';
+import FormArea from './components/form/FormArea.vue';
 
 // components: { LootboxArea, Navigation }
 
@@ -13,7 +14,8 @@ import Navigation from './components/Navigation.vue';
     </header>
 
     <main>
-      <lootbox-area />
+      <LootboxArea />
+      <FormArea />
     </main>
   </div>
 </template>
@@ -22,5 +24,13 @@ import Navigation from './components/Navigation.vue';
   .main-container {
     width: 96%;
     margin: auto;
+  }
+
+  @media screen and (min-width: 1200px) {
+    main {
+      display: flex;
+      flex-direction: row;
+      gap: 25px
+    }
   }
 </style>
