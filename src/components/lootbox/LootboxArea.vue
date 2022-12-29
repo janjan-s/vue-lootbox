@@ -33,6 +33,8 @@ export default defineComponent({
 @media screen and (min-width: 1200px) {
     .lootbox-container {
         width: 70%;
+        margin-bottom: 0;
+        margin-top: 20px;
     }
 }
 

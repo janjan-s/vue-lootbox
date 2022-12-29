@@ -26,6 +26,7 @@
   --light-blue: #F4FDFF;
   --white: #fff;
   --light-grey: #999;
+  --purple: #c3bdda;
 
   --drop-shadow: drop-shadow(5px 5px 7px #979797);
 
@@ -44,7 +45,7 @@
 
 /* ----------------------------- Spacing --------------------------------------- */
 
-  --mobile-gutters: 30px 0;
+  --mobile-gutters: 30px 0 30px 0;
 
 }
 
@@ -72,7 +73,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 95vh;
   color: var(--color-text);
   background-color:  var(--light-blue);
   transition: color 0.5s, background-color 0.5s;

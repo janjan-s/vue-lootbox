@@ -24,13 +24,25 @@ ul {
     list-style-type: none;
     display: flex;
     padding: 0;
-    text-align: center;
+    text-align: left;
 }
 
 li {
     flex: 1 1 50%;
-    background: #706993;
-    /* cursor: pointer; */
+    background: var(--purple);
+    margin-top: -16px;
+    height: 5em;
+    line-height: 5em;
+    /* vertical-align: middle; */
+}
+
+li:nth-child(1) {
+    border-top-left-radius: var(--border-containers);
+}
+
+
+li:nth-child(2) {
+    border-top-right-radius: var(--border-containers);
 }
 
 li:not(.selected) {
@@ -38,8 +50,12 @@ li:not(.selected) {
 }
 
 li.selected {
-    background: blue;
+    background: #fff;
     cursor: default;
+}
+
+li h2 {
+    margin-left: 10%;
 }
 
 </style>

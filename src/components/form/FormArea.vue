@@ -1,19 +1,16 @@
 <template>
     <section class="content">
         <FormHeader />
-        <form>
-            <label for="item-name">Item Name</label>
-            <input name="item-name" type="text">
-            <input type="file">
-            <AppButton />
-        </form>
+        <AddNewItemForm />
+        <!-- <GlobalSettingsForm /> -->
 
     </section>
 </template>
 
 <script setup lang="ts">
-import AppButton from '../blocks/AppButton.vue'
 import FormHeader from './FormHeader.vue'
+import AddNewItemForm from './AddNewItemForm.vue';
+import GlobalSettingsForm from './GlobalSettingsForm.vue'
 
 </script>
 
@@ -35,11 +32,15 @@ section {
   margin: var(--mobile-gutters);
   border-radius: var(--border-containers);
   padding-top: 1em;
+  overflow: hidden;
+  width: 100%;
+  /* height: 100%; */
 }
 
 @media screen and (min-width: 1200px) {
     section {
-        width: 30%
+        width: 30%;
+        margin-top: 20px;
     }
 }
 
