@@ -1,7 +1,7 @@
 <template>
-    <section class="content">
+    <section class="content" >
         <FormHeader />
-        <AddNewItemForm />
+        <AddNewItemForm @formSubmit="(newItem) =>handleSubmit(newItem)"/>
         <!-- <GlobalSettingsForm /> -->
 
     </section>
@@ -12,16 +12,19 @@ import FormHeader from './FormHeader.vue'
 import AddNewItemForm from './AddNewItemForm.vue';
 import GlobalSettingsForm from './GlobalSettingsForm.vue'
 
+const emit = defineEmits([
+    'formSubmit'
+])
+
+function handleSubmit(newItem) {
+    // e.preventDefault()
+    console.log("topLevel");
+    console.log(newItem)
+    emit("formAction", newItem);
+}
+
 </script>
 
-<script lang="ts">
-import { defineComponent } from "@vue/runtime-core";
-
-export default defineComponent({
-    name: 'FormArea',
-})
-
-</script>
 
 
 <style scoped>

@@ -1,21 +1,23 @@
 <template>
 
     <li class="lootbox-item">
-        <h3>Title</h3>
-        <img src="https://via.placeholder.com/100" alt="">
-        <span>50%</span>
+        <i class="fa fa-window-close" aria-hidden="true"></i>
+        <h3>{{ title }}</h3>
+        <img :src="imgSrc" :alt="imgAlt">
+        <span>{{ percentChance }}%</span>
     </li>
 
 </template>
 
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 
-export default defineComponent({
-    name: 'LootboxItem',
-})
+const props = defineProps([
+    'title', 'itemDescription', 'imgSrc', 'imgAlt', 'percentChance'
+])
+
 </script>
+
 
 
 <style scoped>
@@ -37,6 +39,16 @@ export default defineComponent({
     display: block;
     padding: 0;
     margin: 0;
+}
+
+.fa-window-close {
+    color: red;
+    position: absolute;
+    right: 10px;
+    top: 2.5px;
+    font-size: 25px;
+    z-index: 10000;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 992px) {

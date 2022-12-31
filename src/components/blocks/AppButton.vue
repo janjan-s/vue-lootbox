@@ -1,14 +1,28 @@
 <template>
-    <button>CLICK</button>
+    <button @click="buttonHandler">{{ props.text }}</button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "@vue/runtime-core";
+<script setup lang="ts">
 
 
-export default defineComponent({
-    name: 'AppButton',
-})
+// --------------------------------------------------------------
+// Data, methods and functions
+// ---------------------------------------------------------------
+
+const props = defineProps([
+    'text'
+])
+
+const emit = defineEmits([
+    'buttonHandler'
+])
+
+function buttonHandler(e: any) {
+    e.preventDefault()
+    console.log("button");
+    emit("buttonHandler");
+}
+
 
 </script>
 

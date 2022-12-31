@@ -3,34 +3,36 @@
     <div class="lootbox-container">
         <LootboxHeader />
         <LootboxItemArea :lootboxItems="lootboxItems" />
-        <!-- <p> {{ props.lootboxItems.title }} </p> -->
     </div>
 
 </template>
 
 
 <script setup lang="ts">
-    import LootboxHeader from './LootboxHeader.vue';
-    import LootboxItemArea from './LootboxItemArea.vue'
-    import { defineProps } from 'vue';
-    import type LootboxItem from '../types/LootboxItem';
+// --------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------
 
-    const props = defineProps([
-        'lootboxItems'
-    ])
+// Components
+import LootboxHeader from './LootboxHeader.vue';
+import LootboxItemArea from './LootboxItemArea.vue'
 
-    // console.log(props);
+// Modules
+import { defineProps } from 'vue';
+
+// Types
+import type LootboxItem from '../types/LootboxItem';
+
+// --------------------------------------------------------------
+// Data, methods and functions
+// ---------------------------------------------------------------
+
+const props = defineProps([
+    'lootboxItems'
+])
+
 </script>
 
-
-<!-- <script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-    name: 'LootboxArea',
-    // props: lootboxData
-})
-</script> -->
 
 <style scoped>
 .lootbox-container {

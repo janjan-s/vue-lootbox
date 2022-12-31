@@ -1,34 +1,41 @@
 <template>
     <div class="content">
         <ul>
-            <!-- <LootboxItem v-for"lootboxItems" /> -->
+            <LootboxItem
+            v-for=" lootboxItem in lootboxItems" :key="lootboxItem.id"
+             :title="lootboxItem.title" 
+             :itemDescription="lootboxItem.itemDescription" 
+             :imgSrc="lootboxItem.imgSrc" 
+             :imgAlt="lootboxItem.imgAlt" 
+             :percentChance="lootboxItem.percentChance"/>
         </ul>
             <Arrows />
-            <AppButton />
-            <AppButton />
+            <AppButton text="Test my box"/>
+            <AppButton text="Save my Box" />
 
     </div>
 </template>
 
 
 <script setup lang="ts">
+// --------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------
+
+// Components
 import LootboxItem from './LootboxItem.vue'
 import Arrows from '../blocks/Arrows.vue'
 import AppButton from '../blocks/AppButton.vue'
+
+// --------------------------------------------------------------
+// Data, methods and functions
+// ---------------------------------------------------------------
 
 const props = defineProps([
         'lootboxItems'
     ])
 
 </script>
-
-<!-- <script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-    name: 'LootboxItemArea',
-})
-</script> -->
 
 
 <style scoped>

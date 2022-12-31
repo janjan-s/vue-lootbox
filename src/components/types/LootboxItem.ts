@@ -1,8 +1,10 @@
 interface LootboxItem {
+    id: number,
     title: string,
-    description: string,
+    itemDescription: string,
     imgSrc: string, 
-    imgAlt: string
+    imgAlt: string,
+    percentChance: number
 }
 
 
