@@ -1,12 +1,7 @@
 <template>
     <div class="content">
         <ul>
-            <LootboxItem />
-            <LootboxItem />
-            <LootboxItem />
-            <LootboxItem />
-            <LootboxItem />
-            <LootboxItem />
+            <!-- <LootboxItem v-for"lootboxItems" /> -->
         </ul>
             <Arrows />
             <AppButton />
@@ -21,15 +16,19 @@ import LootboxItem from './LootboxItem.vue'
 import Arrows from '../blocks/Arrows.vue'
 import AppButton from '../blocks/AppButton.vue'
 
+const props = defineProps([
+        'lootboxItems'
+    ])
+
 </script>
 
-<script lang="ts">
+<!-- <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
     name: 'LootboxItemArea',
 })
-</script>
+</script> -->
 
 
 <style scoped>
