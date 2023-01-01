@@ -2,7 +2,7 @@
     
     <div class="lootbox-container">
         <LootboxHeader />
-        <LootboxItemArea :lootboxItems="lootboxItems" />
+        <LootboxItemArea :lootboxItems="lootboxItems" @closeButtonHandle="(id) => closeButtonHandle(id)" />
     </div>
 
 </template>
@@ -30,6 +30,14 @@ import type LootboxItem from '../types/LootboxItem';
 const props = defineProps([
     'lootboxItems'
 ])
+
+const emit = defineEmits([
+    'closeButtonHandle'
+])
+
+let closeButtonHandle = (id) => {
+    emit("closeButtonHandle", id);
+}
 
 </script>
 

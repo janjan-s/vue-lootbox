@@ -2,12 +2,16 @@
     <div class="content">
         <ul>
             <LootboxItem
-            v-for=" lootboxItem in lootboxItems" :key="lootboxItem.id"
+            v-for="lootboxItem in lootboxItems" 
+             :key="lootboxItem.id"
+             :id="lootboxItem.id"
              :title="lootboxItem.title" 
              :itemDescription="lootboxItem.itemDescription" 
              :imgSrc="lootboxItem.imgSrc" 
              :imgAlt="lootboxItem.imgAlt" 
-             :percentChance="lootboxItem.percentChance"/>
+             :percentChance="lootboxItem.percentChance"
+             @closeButtonHandler="(id) => closeButtonHandle(id)"
+            />
         </ul>
             <Arrows />
             <AppButton text="Test my box"/>
@@ -35,7 +39,17 @@ const props = defineProps([
         'lootboxItems'
     ])
 
+const emit = defineEmits([
+    'closeButtonHandle'
+])
+
+let closeButtonHandle = (id: number) => {
+    emit("closeButtonHandle", id);
+}
+
+
 </script>
+
 
 
 <style scoped>

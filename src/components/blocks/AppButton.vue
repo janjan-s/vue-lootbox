@@ -17,7 +17,7 @@ const emit = defineEmits([
     'buttonHandler'
 ])
 
-function buttonHandler(e: any) {
+let buttonHandler = (e: any) => {
     e.preventDefault()
     console.log("button");
     emit("buttonHandler");

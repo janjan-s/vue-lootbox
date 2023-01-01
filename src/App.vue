@@ -5,7 +5,7 @@
     </header>
 
     <main>
-      <LootboxArea :lootboxItems="lootboxItems" />
+      <LootboxArea :lootboxItems="lootboxItems" @close-button-handle="(id) => closeButtonHandle(id)" />
       <FormArea @formAction="(newItem) => formAction(newItem)" />
 
     </main>
@@ -57,6 +57,9 @@ const formAction = (newItem) => {
   addLootboxItem(newItem.id, newItem.title, newItem.description, newItem.imgSrc, newItem.imgAlt, newItem.percentChance);
 }
 
+let closeButtonHandle = (id) => {
+  removeLootboxItem(id);
+}
 
 </script>
 

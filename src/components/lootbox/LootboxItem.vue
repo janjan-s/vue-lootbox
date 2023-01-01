@@ -1,7 +1,7 @@
 <template>
 
     <li class="lootbox-item">
-        <i class="fa fa-window-close" aria-hidden="true"></i>
+        <i @click="closeButtonHandler" class="fa fa-window-close" aria-hidden="true"></i>
         <h3>{{ title }}</h3>
         <img :src="imgSrc" :alt="imgAlt">
         <span>{{ percentChance }}%</span>
@@ -13,8 +13,19 @@
 <script setup lang="ts">
 
 const props = defineProps([
-    'title', 'itemDescription', 'imgSrc', 'imgAlt', 'percentChance'
+        'title', 'itemDescription', 'imgSrc', 'imgAlt', 'percentChance','id'
 ])
+
+const emit = defineEmits([
+    'closeButtonHandler'
+])
+
+let closeButtonHandler = (e: any) => {
+    // e.preventDefault()
+    console.log(e);
+    console.log(props.id)
+    emit("closeButtonHandler", props.id);
+}
 
 </script>
 
